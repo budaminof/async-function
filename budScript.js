@@ -29,9 +29,11 @@ async function execScriptAsync(numOrders, numScriptRuns, orderName) {
   //hgjh
   let startingLocation = 0;
   let endingLocation = 100;
-  let orderNameLocal;
+  let orderNameLocal = orderName;
   for (let i = 0; i < numOrders; i++) {
-    orderNameLocal = orderName + i;
+    if (!i == 0)  {
+      orderNameLocal = orderName + i;
+    }
     for (let j = 0; j < numScriptRuns; j++) {
       startingLocation += 100;
       endingLocation += 100;

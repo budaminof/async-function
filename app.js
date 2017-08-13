@@ -23,10 +23,13 @@ for (let i = 1; i < process.argv.length; i++) {
 }
 
 // console.log(args);
-for ( let i = args.s; i < args.e; i++) {
-  console.log(args.o, args.s, args.e);
-}
 
+console.log(args.o, args.s, args.e);
+
+return axios.get("https://dog.ceo/api/breeds/list/all").then((res) => {
+  console.log(res.data);
+  return res;
+})
 
 // function getDogStuff(limit) {
 //   return axios.get("https://dog.ceo/api/breeds/list/all").then((res) => {
@@ -37,5 +40,5 @@ for ( let i = args.s; i < args.e; i++) {
 //     }
 //   })
 // }
-//
+
 // getDogStuff(limit)
